@@ -44,7 +44,7 @@ function handleOperator(nextOperator) {
     const currentValue = firstOperand || 0;
     const result = calculate(currentValue, inputValue, operator);
 
-    calculator.displayValue = String(result);
+    calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
     calculator.firstOperand = result;
   }
 
@@ -83,28 +83,30 @@ updateDisplay();
 const keys = document.querySelector('.calculator-keys');
 keys.addEventListener('click', event => {
   const { target } = event;
+  const { value } = target;
   if (!target.matches('button')) {
     return;
   }
 
-  if (target.classList.contains('operator')) {
-    handleOperator(target.value);
-    updateDisplay();
-    return;
+  switch (value) {
+    case '+':
+    case '-':
+    case '*':
+    case '/':
+    case '=':
+      handleOperator(value);
+      break;
+    case '.':
+      inputDecimal(value);
+      break;
+    case 'all-clear':
+      resetCalculator();
+      break;
+    default:
+      if (!isNaN(value)) {
+        inputDigit(value);
+      }
   }
 
-  if (target.classList.contains('decimal')) {
-    inputDecimal(target.value);
-    updateDisplay();
-    return;
-  }
-
-  if (target.classList.contains('all-clear')) {
-    resetCalculator();
-    updateDisplay();
-    return;
-  }
-
-  inputDigit(target.value);
   updateDisplay();
 });
