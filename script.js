@@ -103,7 +103,7 @@ keys.addEventListener('click', event => {
       resetCalculator();
       break;
     default:
-      if (!isNaN(value)) {
+      if (Number.isInteger(parseFloat(value))) {
         inputDigit(value);
       }
   }
