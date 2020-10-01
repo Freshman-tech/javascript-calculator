@@ -1,8 +1,8 @@
 # JavaScript Calculator Tutorial
 
-Build a Calculator app with vanilla JavaScript.
+Build an  Full Responsive Calculator with vanilla JavaScript.
 
-Tutorial: https://freshman.tech/calculator/
+For Easy Tutorial: https://freshman.tech/calculator/
 
 ## Live demo
 
