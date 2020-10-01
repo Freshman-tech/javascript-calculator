@@ -1,6 +1,6 @@
 # JavaScript Calculator Tutorial
 
-Build an  Full Responsive Calculator with vanilla JavaScript.
+Build a  Full Responsive Calculator with vanilla JavaScript.
 
 For Easy Tutorial: https://freshman.tech/calculator/
 
